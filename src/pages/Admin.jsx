@@ -254,7 +254,7 @@ export default function Admin() {
   }, [selectedRoom, selectedRoomProfile]);
 
   const roomList = generateRoomsForFloor(selectedFloor, facility.roomsPerFloor);
-  const qrUrl = selectedRoom ? `${window.location.origin}/emergency-response-system/report?room=${selectedRoom}` : "";
+  const qrUrl = selectedRoom ? `${window.location.origin}/emergency-response-system/#/report?room=${selectedRoom}` : "";
   const staffByDept = useMemo(() => {
     const grouped = { Fire: [], Medical: [], Security: [] };
     staffs.forEach((s) => grouped[s.department]?.push(s));
