@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Admin from "./pages/Admin";
 import Report from "./pages/Report";
 import Staff from "./pages/Staff";
@@ -36,7 +36,8 @@ const styles = {
     borderRadius: "50%",
     right: "-120px",
     top: "-120px",
-    background: "radial-gradient(circle, rgba(255, 59, 59, 0.22), rgba(255, 59, 59, 0))",
+    background:
+      "radial-gradient(circle, rgba(255, 59, 59, 0.22), rgba(255, 59, 59, 0))",
     pointerEvents: "none",
   },
   badge: {
@@ -80,7 +81,8 @@ const styles = {
     border: "1px solid rgba(255, 255, 255, 0.08)",
     borderRadius: "12px",
     padding: "16px",
-    transition: "transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease",
+    transition:
+      "transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease",
   },
   itemTitle: {
     fontSize: "15px",
@@ -132,7 +134,8 @@ const styles = {
     borderRadius: "12px",
     padding: "14px 16px",
     background: "rgba(255, 255, 255, 0.04)",
-    transition: "transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease",
+    transition:
+      "transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease",
     animation: "fadeSlideIn 850ms ease-out",
   },
   navButtonTitle: {
@@ -183,44 +186,49 @@ function Home() {
           <div style={styles.badge}>Emergency Response Platform</div>
           <div style={styles.title}>Hotel Emergency Alert Management System</div>
           <div style={styles.subtitle}>
-            This project provides a real-time emergency response workflow for multi-floor
-            facilities. Guests can raise alerts from room QR links, while staff and admins
-            instantly monitor, assign, update, and resolve incidents from live dashboards.
+            This project provides a real-time emergency response workflow for
+            multi-floor facilities. Guests can raise alerts from room QR links,
+            while staff and admins instantly monitor, assign, update, and
+            resolve incidents from live dashboards.
           </div>
 
           <div style={styles.grid}>
             <div style={styles.item} className="home-card-item">
               <div style={styles.itemTitle}>Rapid Reporting</div>
               <div style={styles.itemBody}>
-                Room-specific reporting page allows users to trigger Fire, Medical, or
-                Security alerts in seconds.
+                Room-specific reporting page allows users to trigger Fire,
+                Medical, or Security alerts in seconds.
               </div>
             </div>
+
             <div style={styles.item} className="home-card-item">
               <div style={styles.itemTitle}>Live Staff Dashboard</div>
               <div style={styles.itemBody}>
-                Operational team tracks active incidents, floor distribution, and status
-                progression in a visual map-first interface.
+                Operational team tracks active incidents, floor distribution,
+                and status progression in a visual map-first interface.
               </div>
             </div>
+
             <div style={styles.item} className="home-card-item">
               <div style={styles.itemTitle}>Admin Control</div>
               <div style={styles.itemBody}>
-                Central panel for incident oversight, prioritization, response updates, and
-                final resolution/deletion actions.
+                Central panel for incident oversight, prioritization, response
+                updates, and final resolution/deletion actions.
               </div>
             </div>
+
             <div style={styles.item} className="home-card-item">
               <div style={styles.itemTitle}>Booking Availability</div>
               <div style={styles.itemBody}>
-                Reception can check room availability, register visitors, and manage stay
-                duration for active rooms.
+                Reception can check room availability, register visitors, and
+                manage stay duration for active rooms.
               </div>
             </div>
           </div>
 
           <div style={styles.routesWrap}>
             <div style={styles.routesTitle}>Available Pages</div>
+
             <div style={styles.routeList}>
               <span style={styles.routeBadge}>/admin</span>
               <span style={styles.routeBadge}>/staff</span>
@@ -229,14 +237,22 @@ function Home() {
             </div>
 
             <div style={styles.buttonRow}>
-              <Link to="/admin" style={styles.navButton} className="home-nav-button">
+              <Link
+                to="/admin"
+                style={styles.navButton}
+                className="home-nav-button"
+              >
                 <div style={styles.navButtonTitle}>Open Admin Panel</div>
                 <div style={styles.navButtonSub}>
                   Manage active alerts, statuses, and incident lifecycle.
                 </div>
               </Link>
 
-              <Link to="/staff" style={styles.navButton} className="home-nav-button">
+              <Link
+                to="/staff"
+                style={styles.navButton}
+                className="home-nav-button"
+              >
                 <div style={styles.navButtonTitle}>Open Staff Dashboard</div>
                 <div style={styles.navButtonSub}>
                   Track floor alerts in real-time with map-based view.
@@ -253,7 +269,12 @@ function Home() {
                   Simulate alert creation flow for a sample room.
                 </div>
               </Link>
-              <Link to="/reception" style={styles.navButton} className="home-nav-button">
+
+              <Link
+                to="/reception"
+                style={styles.navButton}
+                className="home-nav-button"
+              >
                 <div style={styles.navButtonTitle}>Open Reception</div>
                 <div style={styles.navButtonSub}>
                   Check room availability and create visitor check-ins.
@@ -269,7 +290,7 @@ function Home() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
@@ -278,6 +299,6 @@ export default function App() {
         <Route path="/reception" element={<Reception />} />
         <Route path="/staffs/:staffId" element={<StaffProfile />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
