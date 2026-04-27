@@ -574,7 +574,7 @@ export default function Admin() {
             Clear History Permanently
           </button>
         </div>
-        <div style={styles.note}>Default admin password: <b>{HISTORY_CLEAR_PASSWORD}</b></div>
+        
         {historyAlerts.slice(0, 5).map((item) => (
           <div key={item.id} style={styles.historyItem}>
             {item.room} • {item.type} • {item.status} • {item.archivedAt ? new Date(item.archivedAt).toLocaleString() : "archived"}
