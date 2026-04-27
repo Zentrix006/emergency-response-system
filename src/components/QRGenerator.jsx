@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Admin() {
   const [room, setRoom] = useState("");
 
-  const url = `https://yourapp.web.app/emergency-response-system/report?room=${room}`;
+  const url = `https://yourapp.web.app/emergency-response-system/#/report?room=${room}`;
 
   return (
     <div>
